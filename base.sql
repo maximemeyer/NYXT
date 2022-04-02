@@ -20,8 +20,8 @@ CREATE TABLE IF NOT EXISTS PRODUIT(
   nom_produit VARCHAR(50),
   description_produit VARCHAR(50),
   type_produit VARCHAR(50),
-  enStock INT,
-  prix DECIMAL
+  score int,
+  prix DECIMAL,
   PRIMARY KEY(id_produit)
 );
 
