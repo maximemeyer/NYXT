@@ -23,10 +23,6 @@ const routes: Routes = [
         loadChildren: () => import('./tierlist/tierlist.module').then(m => m.TierlistPageModule)
     },
     {
-        path: 'products',
-        loadChildren: () => import('./products/products.module').then(m => m.ProductsPageModule)
-    },
-    {
         path: 'register',
         loadChildren: () => import('./register/register.module').then(m => m.RegisterPageModule)
     },
