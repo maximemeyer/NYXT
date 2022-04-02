@@ -1,7 +1,6 @@
 CREATE DATABASE IF NOT EXISTS nyxt;
 use nyxt;
 
-DROP TABLE IF EXISTS panier;
 DROP TABLE IF EXISTS favoris;
 DROP TABLE IF EXISTS PRODUIT;
 DROP TABLE IF EXISTS utilisateur;
@@ -35,10 +34,3 @@ CREATE TABLE IF NOT EXISTS favoris(
   FOREIGN KEY(id_util) REFERENCES UTILISATEUR(id_util)
 );
 
-CREATE TABLE IF NOT EXISTS panier(
-  id_util INT NOT NULL,
-  id_produit INT NOT NULL,
-  PRIMARY KEY(id_produit, id_util),
-  FOREIGN KEY(id_produit) REFERENCES PRODUIT(id_produit),
-  FOREIGN KEY(id_util) REFERENCES UTILISATEUR(id_util)
-)
