@@ -11,8 +11,8 @@ const routes: Routes = [
         loadChildren: () => import('./connection/connection.module').then(m => m.ConnectionPageModule)
     },
     {
-        path: 'profil',
-        loadChildren: () => import('./profil/profil.module').then(m => m.ProfilPageModule)
+        path: 'profile',
+        loadChildren: () => import('./profile/profile.module').then(m => m.ProfilePageModule)
     },
     {
         path: 'favoris',
@@ -21,10 +21,6 @@ const routes: Routes = [
     {
         path: 'tierlist',
         loadChildren: () => import('./tierlist/tierlist.module').then(m => m.TierlistPageModule)
-    },
-    {
-        path: 'products',
-        loadChildren: () => import('./products/products.module').then(m => m.ProductsPageModule)
     },
     {
         path: 'register',
