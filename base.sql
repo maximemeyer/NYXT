@@ -9,7 +9,7 @@ CREATE TABLE IF NOT EXISTS utilisateur(
   id_util INT NOT NULL auto_increment,
   nom_util VARCHAR(50) NOT NULL,
   prenom_util VARCHAR(50) NOT NULL,
-  email_util VARCHAR(50) NOT NULL,
+  email_util VARCHAR(100) NOT NULL,
   date_naissance_util date,
   mot_de_passe_util TEXT NOT NULL,
   PRIMARY KEY(id_util)
@@ -17,9 +17,9 @@ CREATE TABLE IF NOT EXISTS utilisateur(
 
 CREATE TABLE IF NOT EXISTS PRODUIT(
   id_produit INT NOT NULL auto_increment,
-  nom_produit VARCHAR(50),
-  description_produit VARCHAR(50),
-  type_produit VARCHAR(50),
+  nom_produit VARCHAR(100),
+  description_produit TEXT,
+  type_produit VARCHAR(100),
   score int,
   prix DECIMAL,
   PRIMARY KEY(id_produit)
