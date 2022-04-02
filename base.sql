@@ -34,3 +34,14 @@ CREATE TABLE IF NOT EXISTS favoris(
   FOREIGN KEY(id_util) REFERENCES UTILISATEUR(id_util)
 );
 
+CREATE TABLE IF NOT EXISTS commentaires
+(
+  id_commentaire int not null,
+  id_produit int not null,
+  id_utilisateur int not null,
+  texte TEXT,
+  note int,
+  PRIMARY KEY(id_commentaire),
+  FOREIGN KEY(id_utilisateur) REFERENCES UTILISATEUR(id_util)
+);
+
