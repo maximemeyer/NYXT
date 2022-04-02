@@ -1,3 +1,11 @@
+CREATE DATABASE IF NOT EXISTS nyxt;
+use nyxt;
+
+DROP TABLE IF EXISTS panier;
+DROP TABLE IF EXISTS favoris;
+DROP TABLE IF EXISTS PRODUIT;
+DROP TABLE IF EXISTS utilisateur;
+
 CREATE TABLE IF NOT EXISTS utilisateur(
   id_util INT NOT NULL auto_increment,
   nom_util VARCHAR(50) NOT NULL,
