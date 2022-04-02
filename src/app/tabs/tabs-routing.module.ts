@@ -12,8 +12,8 @@ const routes: Routes = [
                 loadChildren: () => import('../components/components.module').then(m => m.ComponentsPageModule)
             },
             {
-                path: 'tab2',
-                loadChildren: () => import('../tab2/tab2.module').then(m => m.Tab2PageModule)
+                path: 'favorites',
+                loadChildren: () => import('../favorites/favorites.module').then(m => m.FavoritesPageModule)
             },
             {
                 path: 'tab3',
