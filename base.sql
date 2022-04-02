@@ -8,3 +8,29 @@ CREATE TABLE IF NOT EXISTS utilisateur(
   PRIMARY KEY(id_util)
 );
 
+CREATE TABLE IF NOT EXISTS PRODUIT(
+  id_produit INT NOT NULL auto_increment,
+  nom_produit VARCHAR(50),
+  description_produit VARCHAR(50),
+  type_produit VARCHAR(50),
+  enStock INT,
+  prix DECIMAL
+  PRIMARY KEY(id_produit)
+);
+
+CREATE TABLE IF NOT EXISTS favoris(
+  id_fav INT NOT NULL auto_increment,
+  id_produit INT NOT NULL,
+  id_util INT NOT NULL,
+  PRIMARY KEY(id_fav, id_produit, id_util),
+  FOREIGN KEY(id_produit) REFERENCES PRODUIT(id_produit),
+  FOREIGN KEY(id_util) REFERENCES UTILISATEUR(id_util)
+);
+
+CREATE TABLE IF NOT EXISTS panier(
+  id_util INT NOT NULL,
+  id_produit INT NOT NULL,
+  PRIMARY KEY(id_produit, id_util),
+  FOREIGN KEY(id_produit) REFERENCES PRODUIT(id_produit),
+  FOREIGN KEY(id_util) REFERENCES UTILISATEUR(id_util)
+)
