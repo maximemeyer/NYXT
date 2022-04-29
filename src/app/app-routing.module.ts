@@ -4,15 +4,11 @@ import { PreloadAllModules, RouterModule, Routes } from '@angular/router';
 const routes: Routes = [
     {
         path: '',
-        loadChildren: () => import('./tabs/tabs.module').then(m => m.TabsPageModule)
+        loadChildren: () => import('./connection/connection.module').then(m => m.ConnectionPageModule)
     },
     {
         path: 'connection',
         loadChildren: () => import('./connection/connection.module').then(m => m.ConnectionPageModule)
-    },
-    {
-        path: 'tierlist',
-        loadChildren: () => import('./tierlist/tierlist.module').then(m => m.TierlistPageModule)
     },
     {
         path: 'register',
