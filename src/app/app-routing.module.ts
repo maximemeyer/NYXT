@@ -11,10 +11,6 @@ const routes: Routes = [
         loadChildren: () => import('./connection/connection.module').then(m => m.ConnectionPageModule)
     },
     {
-        path: 'tierlist',
-        loadChildren: () => import('./tierlist/tierlist.module').then(m => m.TierlistPageModule)
-    },
-    {
         path: 'register',
         loadChildren: () => import('./register/register.module').then(m => m.RegisterPageModule)
     },
