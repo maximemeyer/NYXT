@@ -5,5 +5,16 @@
 </ion-header>
 
 <ion-content>
+  <div id="componentsInscription">
+    <ion-input [(ngModel)]="nom" placeholder="Nom" autofocus="true"></ion-input>
+    <ion-input [(ngModel)]="prenom" placeholder="Prénom"></ion-input>
+    <ion-input [(ngModel)]="email" placeholder="Email"></ion-input>
+    <ion-input [(ngModel)]="date" type="Date"></ion-input>
+    <ion-input [(ngModel)]="password" type="password" placeholder="Mot de passe"></ion-input>
+    <ion-input [(ngModel)]="confirmPwd" type="password" placeholder="Confirmez le mot de passe"></ion-input>
+    <ion-button (click)="RegisterUser()">S'inscrire</ion-button>
+    <br>
+    <ion-router-link (click)="goToConnection()">Se connecter</ion-router-link>
+  </div>
 
 </ion-content>
