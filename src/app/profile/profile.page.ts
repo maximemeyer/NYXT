@@ -1,3 +1,4 @@
+import { FactoryImpl } from './../dao/Factory';
 import { Component } from '@angular/core';
 import { Router } from '@angular/router';
 @Component({
@@ -6,9 +7,11 @@ import { Router } from '@angular/router';
     styleUrls: ['profile.page.scss']
 })
 export class ProfilePage {
-
-    constructor(private router: Router) { }
-
+    get userName() {
+        return FactoryImpl.userName;
+    }
+    constructor(private router: Router) {
+    }
     onDisconnect() {
         this.router.navigate(['/connection']);
     }
