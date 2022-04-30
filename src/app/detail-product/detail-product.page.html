@@ -1,20 +1,31 @@
 <ion-header>
   <ion-toolbar>
-    <ion-title>detail_product</ion-title>
+    <ion-title>{{title}}</ion-title>
   </ion-toolbar>
 </ion-header>
 
 <ion-content>
-  <ion-title [(ngModel)]="titre">Title article</ion-title>
-  <ion-img href="#" alt="Image article" [(ngModel)]="lienImg"></ion-img>
-  <div id="global">
-    <div id="descriptionArt">
-      <p [(ngModel)]="description">description article</p>
-    </div>
-    <div id="informations">
-      <p [(ngModel)]="prixConseille">Prix conseillé : 1€</p>
-      <p [(ngModel)]="score">Score : 10/10</p>
-      <ion-button>Ajouter aux favoris</ion-button>
-    </div>
-  </div>
+  <ion-list>
+    <ion-item>
+<!--      <ion-icon name="document-text-outline" slot="start"></ion-icon>-->
+      <ion-label>
+        Description : <br>{{description}}
+      </ion-label>
+    </ion-item>
+    <ion-item>
+      <ion-label>
+        Price : <br>{{price}}
+      </ion-label>
+    </ion-item>
+    <ion-item>
+      <ion-label>
+        Score : <br>{{score}}
+      </ion-label>
+    </ion-item>
+    <ion-item>
+      <ion-label>
+        <ion-button>Ajouter aux favoris</ion-button>
+      </ion-label>
+    </ion-item>
+  </ion-list>
 </ion-content>
