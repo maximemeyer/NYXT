@@ -1,5 +1,5 @@
-import { Factory } from "./Factory";
-import { Article } from "./Article";
+import { Factory } from "./factory";
+import { Article } from "./article";
 
 export class DummyFactory implements Factory {
     private _userName: string;
