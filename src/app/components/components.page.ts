@@ -1,3 +1,5 @@
+import { FactoryImpl } from './../dao/factory';
+import { Article } from './../dao/article';
 import { Component } from '@angular/core';
 
 @Component({
@@ -7,6 +9,8 @@ import { Component } from '@angular/core';
 })
 export class ComponentsPage {
 
-    constructor() { }
-
+    articles: Article[];
+    constructor() {
+        this.articles = FactoryImpl.getArticles();
+    }
 }

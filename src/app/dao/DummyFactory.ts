@@ -17,7 +17,28 @@ export class DummyFactory implements Factory {
         this._userName = null;
     }
     getArticles(): Article[] {
-        return new Article[0];
+        return [
+            {
+                name: "Composant 1",
+                description: "Un joli composant",
+                type: "other",
+                score: 6,
+                price: 59.99
+            },
+            {
+                name: "CPU 1",
+                description: "Processeur",
+                type: "cpu",
+                score: 14,
+                price: 249.99
+            },
+            {
+                name: "MOBO 1",
+                description: "Carte mère",
+                type: "motherboard",
+                score: 18,
+                price: 159.99
+            }
+        ];
     }
-
 }

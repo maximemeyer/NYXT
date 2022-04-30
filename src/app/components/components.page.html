@@ -12,4 +12,17 @@
             <ion-title size="large">Composants</ion-title>
         </ion-toolbar>
     </ion-header>
+    <ion-list *ngFor="let article of articles">
+        <ion-item>
+            <ion-label>
+                {{article.name}}
+            </ion-label>
+            <ion-label>
+                {{article.price}}€
+            </ion-label>
+            <ion-button>
+                <ion-icon name="document-text"></ion-icon>
+            </ion-button>
+        </ion-item>
+    </ion-list>
 </ion-content>
