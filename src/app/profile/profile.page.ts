@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-
+import { Router } from '@angular/router';
 @Component({
     selector: 'app-profile',
     templateUrl: 'profile.page.html',
@@ -7,6 +7,9 @@ import { Component } from '@angular/core';
 })
 export class ProfilePage {
 
-    constructor() { }
+    constructor(private router: Router) { }
 
+    onDisconnect() {
+        this.router.navigate(['/connection']);
+    }
 }
