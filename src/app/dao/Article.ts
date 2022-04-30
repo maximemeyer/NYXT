@@ -4,4 +4,5 @@ export class Article {
     public type: string;
     public score: number;
     public price: number;
+    public favorite: boolean;
 }

@@ -23,21 +23,24 @@ export class DummyFactory implements Factory {
                 description: "Un joli composant",
                 type: "other",
                 score: 6,
-                price: 59.99
+                price: 59.99,
+                favorite: false
             },
             {
                 name: "CPU 1",
                 description: "Processeur",
                 type: "cpu",
                 score: 14,
-                price: 249.99
+                price: 249.99,
+                favorite: true
             },
             {
                 name: "MOBO 1",
                 description: "Carte mère",
                 type: "motherboard",
                 score: 18,
-                price: 159.99
+                price: 159.99,
+                favorite: true
             }
         ];
     }
