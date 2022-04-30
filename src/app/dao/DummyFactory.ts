@@ -1,5 +1,6 @@
 import { Factory } from "./factory";
 import { Article } from "./article";
+import { Comment } from "./comment";
 
 export class DummyFactory implements Factory {
     private _userName: string;
@@ -24,7 +25,8 @@ export class DummyFactory implements Factory {
                 type: "other",
                 score: 6,
                 price: 59.99,
-                favorite: false
+                favorite: false,
+                comments: []
             },
             {
                 name: "CPU 1",
@@ -32,7 +34,14 @@ export class DummyFactory implements Factory {
                 type: "cpu",
                 score: 14,
                 price: 249.99,
-                favorite: true
+                favorite: true,
+                comments: [
+                    {
+                        author: "Xx_D@rkSasuke_Du_57_xX",
+                        rating: 4,
+                        content: "bread 👍"
+                    }
+                ]
             },
             {
                 name: "MOBO 1",
@@ -40,7 +49,8 @@ export class DummyFactory implements Factory {
                 type: "motherboard",
                 score: 18,
                 price: 159.99,
-                favorite: true
+                favorite: true,
+                comments: []
             }
         ];
     }
