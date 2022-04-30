@@ -1,4 +1,4 @@
-import { FactoryImpl } from './../dao/Factory';
+import { FactoryImpl } from '../dao/factory';
 import { Component } from '@angular/core';
 import { Router } from '@angular/router';
 @Component({

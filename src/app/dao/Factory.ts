@@ -1,5 +1,5 @@
-import { Article } from './Article';
-import { DummyFactory } from './DummyFactory';
+import { Article } from './article';
+import { DummyFactory } from './dummyFactory';
 
 export interface Factory {
     readonly userName: string;
