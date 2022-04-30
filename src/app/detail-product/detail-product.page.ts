@@ -10,18 +10,19 @@ import {ActivatedRoute} from '@angular/router';
 export class DetailProductPage implements OnInit {
 
   id: string;
-  //titre: string;
-  //lienImg: string;
-  //description: string;
-  //prinxConseille: number;
-  //score: number;
-  //favoris: boolean;
+  titre: string;
+  lienImg: string;
+  description: string;
+  prixConseille: number;
+  score: number;
+  favoris: boolean;
 
   constructor(private activatedRoute: ActivatedRoute) {
     this.id = this.activatedRoute.snapshot.paramMap.get('idArticle');
   }
 
   ngOnInit() {
+    this.id='1';
     axios.get('127.0.0.1:9876/api/utilisateur/detail-product/'+this.id
       // eslint-disable-next-line prefer-arrow/prefer-arrow-functions
     ).then(function(response) {
@@ -30,7 +31,7 @@ export class DetailProductPage implements OnInit {
       }
       // eslint-disable-next-line prefer-arrow/prefer-arrow-functions
     }).catch(function(error) { // si il y a une erreur
-      console.log(error);
+      //console.log(error);
       alert('Impossible de récupérer les données pour l\'article' + this.id);
     });
   }
