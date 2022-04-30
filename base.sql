@@ -2,7 +2,7 @@ CREATE DATABASE IF NOT EXISTS nyxt;
 use nyxt;
 DROP TABLE IF EXISTS commentaires;
 DROP TABLE IF EXISTS favoris;
-DROP TABLE IF EXISTS PRODUIT;
+DROP TABLE IF EXISTS produit;
 DROP TABLE IF EXISTS utilisateur;
 
 CREATE TABLE IF NOT EXISTS utilisateur(
@@ -15,7 +15,7 @@ CREATE TABLE IF NOT EXISTS utilisateur(
   PRIMARY KEY(id_util)
 );
 
-CREATE TABLE IF NOT EXISTS PRODUIT(
+CREATE TABLE IF NOT EXISTS produit(
   id_produit INT NOT NULL auto_increment,
   nom_produit VARCHAR(100),
   description_produit TEXT,
@@ -29,8 +29,8 @@ CREATE TABLE IF NOT EXISTS favoris(
   id_produit INT NOT NULL,
   id_util INT NOT NULL,
   PRIMARY KEY(id_produit, id_util),
-  FOREIGN KEY(id_produit) REFERENCES PRODUIT(id_produit),
-  FOREIGN KEY(id_util) REFERENCES UTILISATEUR(id_util)
+  FOREIGN KEY(id_produit) REFERENCES produit(id_produit),
+  FOREIGN KEY(id_util) REFERENCES utilisateur(id_util)
 );
 
 CREATE TABLE IF NOT EXISTS commentaires
@@ -41,6 +41,6 @@ CREATE TABLE IF NOT EXISTS commentaires
   texte TEXT,
   note int,
   PRIMARY KEY(id_commentaire),
-  FOREIGN KEY(id_utilisateur) REFERENCES UTILISATEUR(id_util)
+  FOREIGN KEY(id_utilisateur) REFERENCES utilisateur(id_util)
 );
 
