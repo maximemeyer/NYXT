@@ -1,7 +1,10 @@
-interface Factory {
+import { Article } from './Article';
+import { DummyFactory } from './DummyFactory';
+
+export interface Factory {
     userName: string;
     login(userName: string): boolean;
     logout(): void;
     getArticles(): Article[];
 }
-const factory: Factory = new DummyFactory();
+export const FactoryImpl: Factory = new DummyFactory();

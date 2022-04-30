@@ -1,4 +1,7 @@
-class DummyFactory implements Factory {
+import { Factory } from "./Factory";
+import { Article } from "./Article";
+
+export class DummyFactory implements Factory {
     private _userName: string;
     constructor() {
         this._userName = "dummy username";
