@@ -15,6 +15,9 @@ export class DetailProductPage implements OnInit {
   price: number;
   type: string;
   score: number;
+  favorite: boolean;
+  comments: Comment[];
+
 
   constructor(private activatedRoute: ActivatedRoute) {
     //this.id = this.activatedRoute.snapshot.paramMap.get('idArticle');
@@ -33,12 +36,15 @@ export class DetailProductPage implements OnInit {
     //  //console.log(error);
     //  alert('Impossible de récupérer les données pour l\'article' + this.id);
     //});
-    const art = FactoryImpl.getArticleById(1);
+    const art = FactoryImpl.getArticleById(2);
+    this.comments = art.comments;
     this.title = art.name;
     this.description = art.description;
     this.type = art.type;
     this.score = art.score;
     this.price = art.price;
+    this.favorite = art.favorite;
+    //this.comments = art.comments;
   }
 
 }

@@ -1,3 +1,5 @@
+import { Comment } from './comment';
+
 export class Article {
     public id: number;
     public name: string;
@@ -5,4 +7,6 @@ export class Article {
     public type: string;
     public score: number;
     public price: number;
+    public favorite: boolean;
+    public comments: Comment[];
 }
