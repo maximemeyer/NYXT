@@ -1,3 +1,3 @@
 export class Article {
-    public Name: string;
+    public name: string;
 }
