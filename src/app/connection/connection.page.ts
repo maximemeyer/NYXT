@@ -39,7 +39,7 @@ export class ConnectionPage implements OnInit {
             }
 
             // eslint-disable-next-line prefer-arrow/prefer-arrow-functions
-        }).catch(function (error) { // si il y a une erreur
+        }).catch(function(error) { // si il y a une erreur
             console.log(error);
             alert('Erreur Identifiant/Mot de passe inconnu');
         });
