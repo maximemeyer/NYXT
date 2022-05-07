@@ -47,4 +47,8 @@ export class ConnectionPage implements OnInit {
             alert('Erreur Identifiant/Mot de passe inconnu');
         });
     }
+
+  forgot() {
+    alert('Dommage');
+  }
 }
