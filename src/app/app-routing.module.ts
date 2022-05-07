@@ -2,9 +2,9 @@ import { NgModule } from '@angular/core';
 import { PreloadAllModules, RouterModule, Routes } from '@angular/router';
 
 const routes: Routes = [
-    {
+  {
         path: '',
-        loadChildren: () => import('./connection/connection.module').then(m => m.ConnectionPageModule)
+        loadChildren: () => import('./detail-product/detail-product.module').then(m => m.DetailProductPageModule)
     },
     {
         path: 'connection',

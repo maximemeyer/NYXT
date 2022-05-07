@@ -1,6 +1,7 @@
-import { Comment } from "./comment";
+import { Comment } from './comment';
 
 export class Article {
+    public id: number;
     public name: string;
     public description: string;
     public type: string;
