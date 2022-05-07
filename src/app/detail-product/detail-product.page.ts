@@ -21,11 +21,13 @@ export class DetailProductPage implements OnInit {
 
 
   constructor(private activatedRoute: ActivatedRoute) {
-    //this.id = this.activatedRoute.snapshot.paramMap.get('idArticle');
+    // @ts-ignore
+    this.id = this.activatedRoute.snapshot.paramMap.get('idArticle');
+    console.log(this.id);
   }
 
   ngOnInit() {
-    this.id=2;
+    //this.id=2;
     //axios.get('127.0.0.1:9876/api/utilisateur/detail-product/'+this.id
     //  // eslint-disable-next-line prefer-arrow/prefer-arrow-functions
     //).then(function(response) {
@@ -45,7 +47,6 @@ export class DetailProductPage implements OnInit {
     this.price = art.price;
     this.favorite = art.favorite;
     this.comments = art.comments;
-    alert(this.favorite);
   }
 
 }
