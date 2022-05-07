@@ -1,4 +1,6 @@
 import { Component } from '@angular/core';
+import { Article } from '../dao/article';
+import { FactoryImpl } from '../dao/factory';
 
 @Component({
     selector: 'app-favorites',
@@ -7,6 +9,11 @@ import { Component } from '@angular/core';
 })
 export class FavoritesPage {
 
-    constructor() { }
+    articles: Article[];
+    constructor() {
+    }
 
+    ionViewWillEnter() {
+        this.articles = FactoryImpl.getArticles().filter(article => article.favorite);
+    }
 }

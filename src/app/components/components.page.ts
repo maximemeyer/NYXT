@@ -11,6 +11,9 @@ export class ComponentsPage {
 
     articles: Article[];
     constructor() {
+    }
+
+    ionViewWillEnter() {
         this.articles = FactoryImpl.getArticles();
     }
 }

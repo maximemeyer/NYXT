@@ -13,16 +13,22 @@
         </ion-toolbar>
     </ion-header>
     <ion-list *ngFor="let article of articles">
-        <ion-item>
-            <ion-label>
-                {{article.name}}
-            </ion-label>
-            <ion-label>
-                {{article.price}}€
-            </ion-label>
-            <ion-button>
-                <ion-icon name="document-text"></ion-icon>
-            </ion-button>
-        </ion-item>
+        <ion-card href="#">
+            <ion-card-header>
+                <ion-card-title>
+                    <ion-label>
+                        {{article.name}}
+                    </ion-label>
+                    <ion-label style="float: right;">
+                        {{article.price}}€
+                    </ion-label>
+                </ion-card-title>
+            </ion-card-header>
+            <ion-card-content>
+                <ion-label>
+                    {{article.description}}
+                </ion-label>
+            </ion-card-content>
+        </ion-card>
     </ion-list>
 </ion-content>
