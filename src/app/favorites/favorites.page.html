@@ -9,7 +9,26 @@
 <ion-content [fullscreen]="true">
     <ion-header collapse="condense">
         <ion-toolbar>
-            <ion-title size="large">Favoris</ion-title>
+            <ion-title size="large">Composants</ion-title>
         </ion-toolbar>
     </ion-header>
+    <ion-list *ngFor="let article of articles">
+        <ion-card href="#">
+            <ion-card-header>
+                <ion-card-title>
+                    <ion-label>
+                        {{article.name}}
+                    </ion-label>
+                    <ion-label style="float: right;">
+                        {{article.price}}€
+                    </ion-label>
+                </ion-card-title>
+            </ion-card-header>
+            <ion-card-content>
+                <ion-label>
+                    {{article.description}}
+                </ion-label>
+            </ion-card-content>
+        </ion-card>
+    </ion-list>
 </ion-content>
