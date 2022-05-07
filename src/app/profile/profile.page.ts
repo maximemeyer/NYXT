@@ -7,12 +7,13 @@ import { Router } from '@angular/router';
     styleUrls: ['profile.page.scss']
 })
 export class ProfilePage {
-    get userName() {
-        return FactoryImpl.userName;
-    }
+    private userName;
     constructor(private router: Router) {
     }
     onDisconnect() {
         this.router.navigate(['/connection']);
+    }
+    ionViewWillEnter() {
+        this.userName = FactoryImpl.userName;
     }
 }
