@@ -38,12 +38,17 @@ export class DummyFactory implements Factory {
                 type: 'cpu',
                 score: 14,
                 price: 249.99,
-                favorite: true,
+                favorite: false,
                 comments: [
                     {
                         author: 'Xx_D@rkSasuke_Du_57_xX',
                         rating: 4,
                         content: 'bread 👍'
+                    },
+                    {
+                      author: 'Xx_D@rkSasuke_Du_57_xX',
+                      rating: 5,
+                      content: 'bread2 👍'
                     }
                 ]
             },
@@ -55,7 +60,13 @@ export class DummyFactory implements Factory {
                 score: 18,
                 price: 159.99,
                 favorite: true,
-                comments: []
+                comments: [
+                  {
+                    author: 'Xx_D@rkSasuke_Du_57_xX',
+                    rating: 4,
+                    content: 'bread3 👍'
+                  }
+                ]
             }
         ];
     }

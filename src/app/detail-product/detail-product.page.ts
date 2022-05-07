@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import axios from 'axios';
 import {ActivatedRoute} from '@angular/router';
 import {FactoryImpl} from '../dao/Factory';
+import {Comment} from '../dao/comment';
 @Component({
   selector: 'app-detail-product',
   templateUrl: './detail-product.page.html',
@@ -9,7 +10,7 @@ import {FactoryImpl} from '../dao/Factory';
 })
 export class DetailProductPage implements OnInit {
 
-  id: string;
+  id: number;
   title: string;
   description: string;
   price: number;
@@ -24,7 +25,7 @@ export class DetailProductPage implements OnInit {
   }
 
   ngOnInit() {
-    //this.id='1';
+    this.id=2;
     //axios.get('127.0.0.1:9876/api/utilisateur/detail-product/'+this.id
     //  // eslint-disable-next-line prefer-arrow/prefer-arrow-functions
     //).then(function(response) {
@@ -36,15 +37,15 @@ export class DetailProductPage implements OnInit {
     //  //console.log(error);
     //  alert('Impossible de récupérer les données pour l\'article' + this.id);
     //});
-    const art = FactoryImpl.getArticleById(2);
-    this.comments = art.comments;
+    const art = FactoryImpl.getArticleById(this.id);
     this.title = art.name;
     this.description = art.description;
     this.type = art.type;
     this.score = art.score;
     this.price = art.price;
     this.favorite = art.favorite;
-    //this.comments = art.comments;
+    this.comments = art.comments;
+    alert(this.favorite);
   }
 
 }
