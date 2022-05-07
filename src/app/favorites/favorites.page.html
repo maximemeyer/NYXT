@@ -13,7 +13,7 @@
         </ion-toolbar>
     </ion-header>
     <ion-list *ngFor="let article of articles">
-        <ion-card href="#">
+        <ion-card (click)="getArticle(article.id)">
             <ion-card-header>
                 <ion-card-title>
                     <ion-label>
