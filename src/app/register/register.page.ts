@@ -13,8 +13,9 @@ export class RegisterPage implements OnInit {
     nom: string;
     prenom: string;
     email: string;
-    date: Date;
-    password: string;
+  // eslint-disable-next-line @typescript-eslint/naming-convention
+    date_naissance: Date;
+    mdp: string;
     confirmPwd: string;
     errorMessage = '';
     hasErrors = false;
@@ -42,7 +43,7 @@ export class RegisterPage implements OnInit {
       this.hasErrors = true;
     }
 
-    if (this.password == null) {
+    if (this.mdp == null) {
       this.errorMessage += '- Mot de passe non fournis \n';
       this.hasErrors = true;
     }
@@ -53,7 +54,7 @@ export class RegisterPage implements OnInit {
     }
 
     // eslint-disable-next-line eqeqeq
-    if (this.password != this.confirmPwd) {
+    if (this.mdp != this.confirmPwd) {
       this.errorMessage += '- Les mots de passe ne sont pas identique \n';
       this.hasErrors = true;
     }
@@ -71,18 +72,19 @@ export class RegisterPage implements OnInit {
 
       });
     } else {
-        axios.post('127.0.0.1:9876/api/utilisateur/register', {
+      const context = this;
+        axios.post('http://192.168.43.52:9876/api/utilisateur', {
             nom: this.nom,
             prenom: this.prenom,
             email: this.email,
-            date: this.date,
-            password: this.password
+            // eslint-disable-next-line @typescript-eslint/naming-convention
+            date_naissance: this.date_naissance,
+            mdp: this.mdp
           }
          // eslint-disable-next-line prefer-arrow/prefer-arrow-functions
         ).then(function(response) {
           if(response.status===200){ // si il n'y a pas d'erreur
-            // on sauvegarde l'utilisateur(response.data) dans le store
-            // on va à l'accueil ou à la pge qui était demandé
+            context.router.navigate(['tabs']);
           }
          // eslint-disable-next-line prefer-arrow/prefer-arrow-functions
         }).catch(function(error) { // si il y a une erreur
