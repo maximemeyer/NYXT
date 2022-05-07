@@ -25,6 +25,8 @@ export class RegisterPage implements OnInit {
 
   // eslint-disable-next-line @typescript-eslint/naming-convention
   RegisterUser() {
+    this.errorMessage = '';
+    this.hasErrors = false;
     if (this.nom == null) {
       this.errorMessage += '- Nom non fournis'+'\n';
       this.hasErrors = true;
