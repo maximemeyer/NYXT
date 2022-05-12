@@ -1,7 +1,7 @@
 <ion-header>
   <ion-toolbar>
     <ion-buttons slot="start">
-      <ion-back-button defaultHref=""></ion-back-button>
+      <ion-icon  (click)="router.navigate(['tabs']);" name="arrow-back-outline"></ion-icon>
     </ion-buttons>
     <ion-title>{{title}}</ion-title>
   </ion-toolbar>
@@ -27,8 +27,8 @@
     </ion-item>
     <ion-item>
       <ion-label>
-        <ion-button *ngIf="favorite === true">Retirer des favoris</ion-button>
-        <ion-button *ngIf="favorite === false">Ajouter aux favoris</ion-button>
+        <ion-button *ngIf="favorite === true" (click)="delFav()">Retirer des favoris</ion-button>
+        <ion-button *ngIf="favorite === false" (click)="ajouteFav()">Ajouter aux favoris</ion-button>
       </ion-label>
     </ion-item>
   </ion-list>
