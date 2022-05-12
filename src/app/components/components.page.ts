@@ -2,6 +2,7 @@ import { FactoryImpl } from './../dao/factory';
 import { Article } from './../dao/article';
 import { Component } from '@angular/core';
 import {Router} from '@angular/router';
+import axios from "axios";
 
 @Component({
     selector: 'app-components',
@@ -15,7 +16,8 @@ export class ComponentsPage {
     }
 
     ionViewWillEnter() {
-        this.articles = FactoryImpl.getArticles();
+        // this.articles = FactoryImpl.getArticles();
+      axios.get('http://127.0.0.1:9876/api/produit').then(response=>this.articles=response.data);
     }
 
   getArticle(idArticle: number) {

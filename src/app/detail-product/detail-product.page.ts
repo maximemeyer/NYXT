@@ -17,7 +17,7 @@ export class DetailProductPage implements OnInit {
   type: string;
   score: number;
   favorite: boolean;
-  comments: Comment[];
+  comments: any[];
 
 
   constructor(private activatedRoute: ActivatedRoute) {
@@ -26,7 +26,7 @@ export class DetailProductPage implements OnInit {
     console.log(this.id);
   }
 
-  ngOnInit() {
+  async ngOnInit() {
     //this.id=2;
     //axios.get('127.0.0.1:9876/api/utilisateur/detail-product/'+this.id
     //  // eslint-disable-next-line prefer-arrow/prefer-arrow-functions
@@ -39,14 +39,24 @@ export class DetailProductPage implements OnInit {
     //  //console.log(error);
     //  alert('Impossible de récupérer les données pour l\'article' + this.id);
     //});
-    const art = FactoryImpl.getArticleById(this.id);
-    this.title = art.name;
+    // const art = FactoryImpl.getArticleById(this.id);
+    const context = this;
+    let art = null;
+    await axios.get('http://127.0.0.1:9876/api/produit/'+this.id).then(article => art = article.data);
+    this.title = art.nom;
     this.description = art.description;
     this.type = art.type;
     this.score = art.score;
-    this.price = art.price;
+    this.price = art.prix;
     this.favorite = art.favorite;
-    this.comments = art.comments;
+    await axios.get('http://127.0.0.1:9876/api/commentaires/produit/'+this.id).then(commentaires=>context.comments=commentaires.data);
+    this.comments.map(async com => {
+      let author = '';
+      await axios.get('http://127.0.0.1:9876/api/utilisateur/'+com.id_utilisateur).then(util=>{
+        author=util.data.prenom;
+      });
+      com.author = author;
+    });
   }
 
 }
