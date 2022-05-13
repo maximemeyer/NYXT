@@ -12,7 +12,7 @@
             <ion-title size="large">Composants</ion-title>
         </ion-toolbar>
     </ion-header>
-  {{articles.length===0?'Aucun favoris':''}}
+  {{(articles && articles.length===0)?'Aucun favoris':''}}
     <ion-list *ngFor="let article of articles">
         <ion-card (click)="getArticle(article.id)">
             <ion-card-header>
