@@ -14,7 +14,7 @@ import {Observable} from "rxjs";
 })
 export class FavoritesPage {
 
-  utilisateur$: Observable<string>;
+  utilisateur$: Observable<string> = null;
   articles: Article[];
   constructor(private router: Router,private store: Store<{ utilisateur: any }>) {
   }
@@ -24,6 +24,7 @@ export class FavoritesPage {
     let copyArticle = [];
     this.store.pipe().subscribe(
       async (data: any) => {
+        this.utilisateur$ = data.utilisateur;
         await axios.get('http://127.0.0.1:9876/api/favoris/' + data.utilisateur.id).then((response) => {
           response.data.forEach(async res => {
             await axios.get('http://127.0.0.1:9876/api/produit/' + res.id_produit).then(article => {
