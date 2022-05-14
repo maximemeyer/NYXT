@@ -24,8 +24,12 @@ export class ProfilePage {
       console.log(this.utilisateur$);
     }
     onDisconnect() {
-      this.store.dispatch(logout());
+      if(this.utilisateur$){
+        this.store.dispatch(logout());
+        this.router.navigate(['/tabs']);
+      }else{
+        this.router.navigate(['/connection']);
+      }
 
-      this.router.navigate(['/connection']);
     }
 }

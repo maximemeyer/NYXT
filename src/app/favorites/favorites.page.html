@@ -12,12 +12,19 @@
             <ion-title size="large">Composants</ion-title>
         </ion-toolbar>
     </ion-header>
-  <div *ngIf="utilisateur$">
-    {{(articles && articles.length===0)?'Aucun favoris':''}}
-  </div>
-  <div *ngIf="!utilisateur$">
-    <ion-button (click)="router.navigate(['/connection']);">Se connecter</ion-button>
-  </div>
+  <ion-grid>
+    <ion-row class="ion-align-items-center">
+      <ion-col class="ion-text-center">
+          <div *ngIf="utilisateur$">
+            {{(articles && articles.length===0)?'Aucun favoris':''}}
+          </div>
+          <div *ngIf="!utilisateur$">
+            <ion-button (click)="router.navigate(['/connection']);">Se connecter</ion-button>
+          </div>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+
     <ion-list *ngFor="let article of articles">
         <ion-card (click)="getArticle(article.id)">
             <ion-card-header>
